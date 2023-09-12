@@ -1,0 +1,21 @@
+*.ebnf
+build
+*.class
+replit.nix
+.breakpoints
+*.iml
+.vscode
+.c_cpp
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+lab*/bin
+lab*/*.ts
+shared/bin
+
+node_modules
+.idea
+bun.lockb
+package.json
+tsconfig.json
