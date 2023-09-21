@@ -19,3 +19,10 @@ node_modules
 bun.lockb
 package.json
 tsconfig.json
+
+.settings
+.classpath
+.project
+.replit
+pom.xml
+target
