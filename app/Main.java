@@ -1,6 +1,5 @@
 package app;
 
-import lab01_roman_numerals.RomanConverter;
 import shared.Input;
 
 import java.lang.reflect.InvocationTargetException;
@@ -23,7 +22,8 @@ class Main {
 
     // menu
     static {
-        program("Roman numeral converter", RomanConverter.class);
+        program("Roman numeral converter", lab01_roman_numerals.RomanConverter.class);
+        program("School", lab02_school_inheritance.Main.class);
         program("Exit", Exit.class);
     }
 
