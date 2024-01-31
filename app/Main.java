@@ -24,6 +24,7 @@ class Main {
     static {
         program("Roman numeral converter", lab01_roman_numerals.RomanConverter.class);
         program("School", lab02_school_inheritance.Main.class);
+        program("Lockable accounts", lab03_lockable.Main.class);
         program("Exit", Exit.class);
     }
 
