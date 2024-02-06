@@ -26,3 +26,6 @@ tsconfig.json
 .replit
 pom.xml
 target
+
+points.in
+points.out
