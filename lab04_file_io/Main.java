@@ -69,6 +69,38 @@ class Point {
     }
 }
 
+abstract class Collection<T> {
+    protected ArrayList<T> items;
+    protected int current;
+
+    public Collection(List<T> items) {
+        this.items = new ArrayList<>(items);
+        current = 0;
+    }
+
+    public Collection() {
+        this.items = new ArrayList<>();
+        current = 0;
+    }
+
+    public T next() {
+        if (current >= items.size()) {
+            return null;
+        }
+        return items.get(current++);
+    }
+
+    public boolean hasNext() {
+        return current < items.size();
+    }
+
+    public void add(T item) {
+        items.add(item);
+    }
+
+    public abstract void save(String fileName) throws IOException;
+}
+
 class PointCollection extends Collection<Point> {
     public PointCollection(List<Point> items) {
         super(items);
@@ -142,37 +174,7 @@ class PointCollection extends Collection<Point> {
     }
 }
 
-abstract class Collection<T> {
-    protected ArrayList<T> items;
-    protected int current;
 
-    public Collection(List<T> items) {
-        this.items = new ArrayList<>(items);
-        current = 0;
-    }
-
-    public Collection() {
-        this.items = new ArrayList<>();
-        current = 0;
-    }
-
-    public T next() {
-        if (current >= items.size()) {
-            return null;
-        }
-        return items.get(current++);
-    }
-
-    public boolean hasNext() {
-        return current < items.size();
-    }
-
-    public void add(T item) {
-        items.add(item);
-    }
-
-    public abstract void save(String fileName) throws IOException;
-}
 
 class DoubleCollection extends Collection<Double> {
     public DoubleCollection(List<Double> items) {
