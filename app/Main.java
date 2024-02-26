@@ -25,6 +25,9 @@ class Main {
         program("Roman numeral converter", lab01_roman_numerals.RomanConverter.class);
         program("School", lab02_school_inheritance.Main.class);
         program("Lockable accounts", lab03_lockable.Main.class);
+        program("File IO", lab04_file_io.Main.class);
+        program("RC circuit", lab05_rc.Main.class);
+        program("Linked lists", lab06_linked_list.Main.class);
         program("Exit", Exit.class);
     }
 

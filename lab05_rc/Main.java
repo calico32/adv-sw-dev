@@ -11,16 +11,17 @@ public class Main {
     public static void main(String[] args) {
         try {
             var params = RCParams.load("rc.in");
+            System.out.println("Loaded parameters from rc.in");
             System.out.printf("B: %s V\tR: %s Ω\tC: %s µF\tT₀: %s µs\tT₁: %s µs\n", formatDouble(params.b), formatDouble(params.resistance), formatDouble(params.capacitance), formatDouble(params.startTime), formatDouble(params.endTime));
             var rcs = new VoltageInstant[100];
             for (var i = 0; i < 100; i++) {
                 var t = i * (params.endTime - params.startTime) / 100;
                 var v = params.b * (1 - Math.exp(-t / (params.resistance * params.capacitance)));
                 rcs[i] = new VoltageInstant(t, v);
-                System.out.printf("Voltage at %sµs: %sf V\n", formatDouble(t), formatDouble(v));
             }
             var collection = new VoltageInstantCollection(rcs);
             collection.save("rc.out");
+            System.out.println("Wrote data points to rc.out");
             collection = VoltageInstantCollection.load("rc.out");
             var riseTime = collection.riseTime(params.b);
             System.out.printf("Rise time: %sµs\n", formatDouble(riseTime));
